@@ -1,10 +1,10 @@
 <?php
 
-    if(isset($_GET['kode'])){
-        $sql_cek = "SELECT * from tb_pegawai WHERE nip='".$_GET['kode']."'";
-        $query_cek = mysqli_query($koneksi, $sql_cek);
-        $data_cek = mysqli_fetch_array($query_cek,MYSQLI_BOTH);
-    }
+if (isset($_GET['kode'])) {
+	$sql_cek = "SELECT * from tb_pegawai WHERE nip='" . $_GET['kode'] . "'";
+	$query_cek = mysqli_query($koneksi, $sql_cek);
+	$data_cek = mysqli_fetch_array($query_cek, MYSQLI_BOTH);
+}
 ?>
 <div class="row">
 
@@ -32,7 +32,7 @@
 								<b>Nama</b>
 							</td>
 							<td>:
-								<?php echo $data_cek['nama']; ?>
+								<?php echo $data_cek['nama_pegawai']; ?>
 							</td>
 						</tr>
 						<tr>
@@ -72,8 +72,7 @@
 				<div class="card-footer">
 					<a href="?page=data-pegawai" class="btn btn-warning">Kembali</a>
 
-					<a href="./report/cetak-pegawai.php?nip=<?php echo $data_cek['nip']; ?>" target=" _blank"
-					 title="Data Pegawai" class="btn btn-primary"><i class="fas fa-print"></i> Print</a>
+					<a href="./report/cetak-pegawai.php?nip=<?php echo $data_cek['nip']; ?>" target=" _blank" title="Data Pegawai" class="btn btn-primary"><i class="fas fa-print"></i> Print</a>
 				</div>
 			</div>
 		</div>
@@ -99,7 +98,7 @@
 				<h3 class="profile-username text-center">
 					<?php echo $data_cek['nip']; ?>
 					-
-					<?php echo $data_cek['nama']; ?>
+					<?php echo $data_cek['nama_pegawai']; ?>
 				</h3>
 			</div>
 		</div>
